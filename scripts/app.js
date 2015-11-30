@@ -6,20 +6,20 @@ angular.module('todoListApp', [])
       };
       $scope.todos.push(todo);
     }
-  });
 
-dataService.getTodos(function(response) {
-  console.log(response.data);
-  $scope.todos = response.data;
-});
+    dataService.getTodos(function(response) {
+      console.log(response.data);
+      $scope.todos = response.data;
+    });
 
-$scope.deleteTodo = function(todo, $index) {
-  dataService.deleteTodo(todo);
-  $scope.todos.splice($index, 1);
-};
-$scope.saveTodo = function(todo) {
-  dataService.saveTodo(todo)
-}
+    $scope.deleteTodo = function(todo, $index) {
+      dataService.deleteTodo(todo);
+      $scope.todos.splice($index, 1);
+    };
+    $scope.saveTodo = function(todo) {
+      dataService.saveTodo(todo)
+    };
+  })
 
 .service('dataService', function($http) {
   this.helloConsole = function() {
