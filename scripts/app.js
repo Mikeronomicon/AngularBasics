@@ -1,5 +1,6 @@
 angular.module('todoListApp', [])
-  .controller('mainCtrl', function($scope) {
+  .controller('mainCtrl', function($scope, dataService) {
+    $scope.helloConsole = dataService.helloConsole;
     $scope.learningNgChange = function() {
       console.log("an input changed");
     };
@@ -7,12 +8,18 @@ angular.module('todoListApp', [])
     $scope.todos = [{
       "name": "clean the house"
     }, {
-      "name": "water the butts"
+      "name": "water the yard"
     }, {
       "name": "eat like a sarrlak"
     }, {
-      "name": "poop"
+      "name": "clean my face"
     }, {
       "name": "drink all the beers"
     }]
-  });
+  })
+
+.service('dataService', function() {
+  this.helloConsole = function() {
+    console.log("you are being serviced")
+  }
+});
