@@ -6,7 +6,7 @@ angular.module('todoListApp')
       var todo = {
         name: "This is a new todo."
       };
-      $scope.todos.push(todo);
+      $scope.todos.unshift(todo);
     }
 
     dataService.getTodos(function(response) {
