@@ -1,7 +1,7 @@
 angular.module('todoListApp')
   .directive('todos', function() {
     return {
-      templateUrl: 'templates/todos.html',
+      templateURL: 'templates/todos.html',
       controller: 'mainCtrl',
       replace: true
     }
